@@ -23,19 +23,34 @@ let Player1Turn = true;
 let isConfirmed = false;
 let Win = false;
 
-window.onload = function() {
-    if (window.location.pathname.endsWith("/index.html")) {
-        uzmiPokemone();
+document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname;
+    if (path.endsWith("/") || path.endsWith("/index.html")) {
+        initIndexPage();
+    } else if (path.endsWith("/fight.html")) {
+        initFightPage();
     }
-    if (window.location.pathname.endsWith("/fight.html")) {
-        let params = new URLSearchParams(window.location.search);
-        let data = params.get("data");
-        if (data) {
-            pokemoni = JSON.parse(decodeURIComponent(data));
-        }
-        getPokeData(pokemoni[0], pokemoni[1]);
+});
+
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload();
     }
 };
+
+function initIndexPage() {
+    uzmiPokemone();
+}
+
+function initFightPage() {
+    const params = new URLSearchParams(window.location.search);
+    const data = params.get("data");
+    if (data) {
+        pokemoni = JSON.parse(decodeURIComponent(data));
+    }
+    getPokeData(pokemoni[0], pokemoni[1]);
+}
+
 
 async function uzmiPokemone() {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=1025`);
@@ -224,8 +239,8 @@ function generate() {
     }
 }
 
-let move1 = 0;
-let move2 = 0;
+let move1 = null;
+let move2 = null;
 
 async function attack(data) {
     if (Player1Turn) {
