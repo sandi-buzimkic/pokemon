@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Battle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="tooltip" style="position: absolute; display: none; background: rgba(0,0,0,0.8); color: white; padding: 5px; border-radius: 5px; font-size: 14px;"></div>
+
+    <div class="background">
+        <!-- Opponent Pokémon -->
+        <div class="pokemon opponent">
+            <div class="battle-container"  style="margin-bottom:50px">
+        
+                <span class="name" id="pokemon2-name">Pikachu</span>
+                <span class="level">Lv. 100</span>
+ 
+                <div style="display: flex;">
+            <div class="health-bar">
+                <div class="health" id="pokemon2-health" style="width: 100%;"></div>
+            </div>
+            <p id="health2" style="margin:5px"></p>
+                </div>
+            </div>
+            <img src="" class="pokemon-sprite" id="img2">
+        </div>
+      
+
+
+        <!-- Player Pokémon -->
+        <div class="pokemon player">
+            <div class="battle-container" style="margin-bottom:50px">
+                <span class="name" id="pokemon1-name">Charmander</span>
+                <span class="level">Lv. 100</span>
+            <div style="display: flex;">
+            <div class="health-bar">
+                <div class="health" id="pokemon1-health" style="width: 100%;"></div>
+            </div>
+            <p id="health1" style="margin:5px"></p>
+        </div>
+        </div>
+            <img src=""  class="pokemon-sprite"  id="img1">
+        </div>
+        <div class="notifications" id="notif">
+
+
+        </div>
+    </div>
+        <!-- Battle Menu -->
+        <div class="battle-menu" id="moves">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

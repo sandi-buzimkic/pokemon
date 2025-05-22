@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('bg1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Pokemon GB', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Pokemon GB';
+  src: url('pokemon\ gb.ttf') format('truetype');
+}
+.background {
+  position: relative; /* Establishes positioning context */
+  width: 1000px;
+  max-width: 100vw;
+  aspect-ratio: 16 / 9; /* Ensures the background takes the full width */
+  background-image: url('bg.jpg'); /* Replace with the URL of your background image */
+  background-size: cover; /* Ensures the image covers the whole container */
+  background-position: center; /* Keeps the image centered */
+  display: block;
+  margin:auto;
+}
+.background > * {
+  transform: scale(calc(100vw / 1000)); /* scales the child elements */
+  transform-origin: top left; /* ensures scaling from top-left corner */
+}
+.search{
+  margin-inline: auto;
+  background: #3A1D25ff;
+  color: #BD7B27ff;
+  padding: 2rem;
+  background-color: #a8c0d0;
+  border: 10px solid #4a6a7a;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  text-align: center;
+}
+.battle-container {
+  position: relative;
+  width: 100%;
+  font-size: 1vw;
+  background-color: #a8c0d0;
+  border: 10px solid #4a6a7a;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding-inline:5vh;
+}
+
+.pokemon {
+  width: 20%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pokemon.opponent {
+  bottom: 40%;
+  right: 17%;
+}
+
+.pokemon.player {
+  bottom: 30%;
+  left: 12%;
+}
+
+
+.pokemon .name {
+  font-weight: bold;
+}
+
+.pokemon .level {
+  margin-left: 10px;
+  color: #555;
+}
+
+.health-bar {
+  width: 200px;
+  height: 10px;
+  background-color: #ccc;
+  border: 2px solid #4a6a7a;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.health {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.pokemon-sprite {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  height: auto;
+  margin-inline:auto;
+}
+
+.battle-menu {
+  width: 50%;
+  margin-inline: auto;
+  margin-block: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 2px solid #4a6a7a;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  gap: 10px; /* Space between buttons */
+}
+
+.battle-menu button {
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Pokemon GB', Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 5px #6d6d6d solid ;
+}
+
+.battle-menu button:hover {
+  border: 5px #303030 solid ;
+}
+.pokemon-button {
+  background-color: #ffcc00; /* Yellow color */
+  border: 4px solid #3b4cca; /* Blue border */
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-family: 'Pokemon GB', Arial, sans-serif;
+  font-size: 20px;
+  color: #3b4cca; /* Blue text */
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #3b4cca; /* Shadow for 3D effect */
+  transition: all 0.1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button Hover Effect */
+.pokemon-button:hover {
+  background-color: #ffd633; /* Lighter yellow */
+  box-shadow: 0 4px 0 #3b4cca;
+  transform: translateY(-2px);
+}
+
+/* Button Active Effect */
+.pokemon-button:active {
+  background-color: #e6b800; /* Darker yellow */
+  box-shadow: 0 2px 0 #3b4cca;
+  transform: translateY(2px);
+}
+
+/* Pixelated Border Effect */
+.pokemon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff; /* White pixel border */
+  border-radius: 10px;
+  box-sizing: border-box;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.notifications{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding:20px;
+}
+
