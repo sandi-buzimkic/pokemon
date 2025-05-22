@@ -9,7 +9,6 @@ body {
     font-family: 'Pokemon GB', Arial, sans-serif;
 }
 
-/* Pokémon GB Font */
 @font-face {
     font-family: 'Pokemon GB';
     src: url('pokemon\ gb.ttf') format('truetype');
@@ -22,54 +21,59 @@ body {
     border: 10px solid #4a6a7a;
     border-radius: 20px;
     width: 600px;
+    max-width: 80%;
     margin-inline: auto;
-    margin-block:100px;
-   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-block: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    color: #3b4cca; /* Pokémon blue */
+    color: #3b4cca;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Pokémon-Style Select Dropdown */
 .pokemon-select {
-    appearance: none; /* Remove default styling */
-    background-color: #ffcc00; /* Pokémon yellow */
-    border: 4px solid #3b4cca; /* Pokémon blue */
+    appearance: none;
+    background-color: #ffcc00;
+    border: 4px solid #3b4cca;
     border-radius: 10px;
     padding: 10px 20px;
     font-family: 'Pokemon GB', Arial, sans-serif;
     font-size: 16px;
-    color: #3b4cca; /* Pokémon blue */
+    color: #3b4cca;
     text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 4px 0 #3b4cca; /* Shadow for 3D effect */
+    box-shadow: 0 4px 0 #3b4cca;
     width: 80%;
     text-align: center;
-    margin-bottom: 20px; /* Space between dropdown and button */
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
 }
+
 .List {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 1rem; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
     margin-top: 2rem;
-    overflow-y:auto;
-    max-height:60vh;
-    margin-inline:auto;
+    overflow-y: auto;
+    max-height: 60vh;
+    margin-inline: auto;
     width: 80%;
 }
+
 .pokem {
     background: #ffcc00;
     padding: 1rem;
     border-radius: 5px;
     border: 2px solid #3b4cca;
-    box-shadow: 0 4px 0 #3b4cca; 
+    box-shadow: 0 4px 0 #3b4cca;
     text-align: center;
     aspect-ratio: 1 / 1;
-  }
-  
+}
+
 .pokem img {
     max-width: 100%;
     height: auto;
@@ -77,52 +81,44 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-.pokemon-select {
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
-}
-
 .pokemon-select:hover {
-    background-color: #ffd633; /* Lighter yellow */
+    background-color: #ffd633;
     box-shadow: 0 4px 0 #3b4cca;
     transform: translateY(-2px);
 }
 
 .pokemon-select:active {
-    background-color: #e6b800; /* Darker yellow */
+    background-color: #e6b800;
     box-shadow: 0 2px 0 #3b4cca;
     transform: translateY(2px);
 }
 
-/* Confirm Button */
 .confirm-button {
-    background-color: #ffcc00; /* Pokémon yellow */
-    border: 4px solid #3b4cca; /* Pokémon blue */
+    background-color: #ffcc00;
+    border: 4px solid #3b4cca;
     border-radius: 10px;
     padding: 10px 20px;
     font-family: 'Pokemon GB', Arial, sans-serif;
     font-size: 16px;
-    color: #3b4cca; /* Pokémon blue */
+    color: #3b4cca;
     text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 4px 0 #3b4cca; /* Shadow for 3D effect */
+    box-shadow: 0 4px 0 #3b4cca;
     transition: all 0.1s ease;
 }
 
 .confirm-button:hover {
-    background-color: #ffd633; /* Lighter yellow */
+    background-color: #ffd633;
     box-shadow: 0 4px 0 #3b4cca;
     transform: translateY(-2px);
 }
 
 .confirm-button:active {
-    background-color: #e6b800; /* Darker yellow */
+    background-color: #e6b800;
     box-shadow: 0 2px 0 #3b4cca;
     transform: translateY(2px);
 }
 
-/* Selected Pokémon Display */
 #selected-pokemon {
     margin-top: 20px;
     font-size: 18px;
